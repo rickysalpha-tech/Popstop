@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" role="img" aria-labelledby="title desc">
+  <title id="title">Verified archive campaign still</title>
+  <desc id="desc">A fictional luxury campaign asset used as synthetic prototype data.</desc>
+  <rect width="960" height="620" fill="#f7f6f1"/>
+  <rect x="64" y="64" width="832" height="492" rx="24" fill="#ffffff" stroke="#d8d3c7" stroke-width="2"/>
+  <rect x="112" y="112" width="330" height="396" fill="#101114"/>
+  <rect x="518" y="112" width="282" height="396" fill="#e7efe9"/>
+  <circle cx="659" cy="258" r="102" fill="#d4b060" opacity=".55"/>
+  <path d="M613 248c0-54 24-88 48-88s48 34 48 88v141h-96V248Z" fill="#17181b"/>
+  <path d="M624 249c0-38 18-64 37-64s37 26 37 64" fill="none" stroke="#f7f6f1" stroke-width="10"/>
+  <text x="112" y="548" fill="#17181b" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="0">MAISON VELORA</text>
+  <text x="112" y="582" fill="#5d6268" font-family="Arial, Helvetica, sans-serif" font-size="17">Verified Archive / Winter capsule / EMEA</text>
+  <text x="146" y="474" fill="#f7f6f1" font-family="Arial, Helvetica, sans-serif" font-size="36" letter-spacing="0">OFFICIAL</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" role="img" aria-labelledby="title desc">
+  <title id="title">Fabricated influencer endorsement post</title>
+  <desc id="desc">A fictional influencer post used as synthetic prototype data.</desc>
+  <rect width="960" height="620" fill="#f7f7f4"/>
+  <rect x="120" y="48" width="720" height="524" rx="30" fill="#ffffff" stroke="#d6d9da" stroke-width="2"/>
+  <circle cx="182" cy="116" r="32" fill="#263b39"/>
+  <rect x="232" y="94" width="182" height="16" rx="8" fill="#202326"/>
+  <rect x="232" y="124" width="112" height="12" rx="6" fill="#8a9291"/>
+  <rect x="160" y="174" width="640" height="270" fill="#e4ece6"/>
+  <circle cx="488" cy="284" r="94" fill="#d7b86a" opacity=".58"/>
+  <rect x="434" y="254" width="112" height="152" rx="18" fill="#17181b"/>
+  <rect x="452" y="232" width="76" height="34" rx="17" fill="#f9f7f1" stroke="#17181b" stroke-width="8"/>
+  <rect x="160" y="468" width="420" height="15" rx="7" fill="#22252a"/>
+  <rect x="160" y="500" width="524" height="12" rx="6" fill="#8a9291"/>
+  <rect x="160" y="526" width="292" height="12" rx="6" fill="#b5bcbd"/>
+  <rect x="650" y="468" width="92" height="28" rx="14" fill="#a23343"/>
+  <text x="668" y="489" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="15">PAID?</text>
+</svg>

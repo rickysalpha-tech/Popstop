@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" role="img" aria-labelledby="title desc">
+  <title id="title">Suspected fake leaked drop video</title>
+  <desc id="desc">A fictional social video still used as synthetic prototype data.</desc>
+  <rect width="960" height="620" fill="#eef3f2"/>
+  <rect x="190" y="44" width="580" height="532" rx="42" fill="#161719"/>
+  <rect x="225" y="84" width="510" height="452" rx="20" fill="#fbfaf6"/>
+  <rect x="225" y="84" width="510" height="156" rx="20" fill="#721f2a"/>
+  <text x="258" y="152" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">LEAKED DROP</text>
+  <text x="258" y="195" fill="#f2d29b" font-family="Arial, Helvetica, sans-serif" font-size="22">02:00 CET / private list only</text>
+  <circle cx="480" cy="368" r="104" fill="#d5aa57" opacity=".6"/>
+  <path d="M414 358c0-66 32-108 66-108s66 42 66 108v104H414V358Z" fill="#1d2023"/>
+  <path d="M432 359c0-43 23-72 48-72s48 29 48 72" fill="none" stroke="#fbfaf6" stroke-width="11"/>
+  <rect x="258" y="480" width="218" height="26" rx="13" fill="#202326"/>
+  <rect x="258" y="518" width="340" height="12" rx="6" fill="#9aa4a7"/>
+  <circle cx="661" cy="515" r="19" fill="#b54850"/>
+</svg>

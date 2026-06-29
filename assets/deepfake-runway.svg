@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" role="img" aria-labelledby="title desc">
+  <title id="title">Suspected deepfake runway campaign still</title>
+  <desc id="desc">A fictional campaign image used as synthetic prototype data.</desc>
+  <rect width="960" height="620" fill="#f4f0e9"/>
+  <rect x="74" y="58" width="812" height="504" fill="#101114"/>
+  <rect x="148" y="104" width="236" height="412" fill="#dad3c5"/>
+  <rect x="392" y="104" width="236" height="412" fill="#c9d7d8"/>
+  <rect x="636" y="104" width="176" height="412" fill="#ead7d1"/>
+  <circle cx="492" cy="204" r="58" fill="#2c2c2c"/>
+  <path d="M432 512l46-244h42l52 244h-38l-27-138-30 138h-45Z" fill="#202326"/>
+  <path d="M420 278c44 34 104 34 150 0" fill="none" stroke="#f7f6f1" stroke-width="10" opacity=".52"/>
+  <rect x="132" y="472" width="172" height="34" rx="17" fill="#741f2d"/>
+  <text x="154" y="496" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="18">VOICE CLONE</text>
+  <text x="132" y="548" fill="#f7f6f1" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="0">UNVERIFIED CAMPAIGN</text>
+</svg>
