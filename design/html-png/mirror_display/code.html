@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reflecta | Mirror Mode</title>
+<!-- Google Fonts: Plus Jakarta Sans (Brand substitute for Satoshi) and JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Mirror specific cursor for passive mode */
+        .mirror-cursor {
+            cursor: none;
+        }
+
+        /* Soft settling animation for fabric-like feel */
+        @keyframes fabric-settle {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .animate-settle {
+            animation: fabric-settle 1.2s cubic-bezier(0.2, 0, 0, 1) forwards;
+        }
+
+        /* Delayed settle for staggered grid */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Custom scrollbar for gallery */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#875e59",
+                        "on-secondary-container": "#616362",
+                        "surface-container-high": "#e8e8e6",
+                        "secondary-fixed": "#e2e3e1",
+                        "text-primary": "#1D1D1F",
+                        "text-secondary": "#52525B",
+                        "mirror-bg": "#141619",
+                        "primary-fixed-dim": "#abcec1",
+                        "on-tertiary-fixed-variant": "#623d39",
+                        "tertiary-fixed": "#ffdad5",
+                        "surface-container": "#eeeeec",
+                        "on-surface-variant": "#414845",
+                        "inverse-surface": "#2f3130",
+                        "surface-tint": "#45655a",
+                        "outline": "#717975",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f4f4f1",
+                        "background": "#faf9f7",
+                        "secondary-fixed-dim": "#c5c7c5",
+                        "on-tertiary-container": "#ffe2de",
+                        "on-primary-fixed": "#002018",
+                        "tertiary-fixed-dim": "#eebab4",
+                        "surface-dim": "#dadad8",
+                        "on-primary": "#ffffff",
+                        "focus-ring": "rgba(79, 111, 100, 0.22)",
+                        "border": "#D9DDD7",
+                        "on-secondary-fixed-variant": "#454746",
+                        "surface-variant": "#e3e2e0",
+                        "on-primary-container": "#cdf1e3",
+                        "outline-variant": "#c1c8c4",
+                        "glass-overlay": "rgba(255, 255, 255, 0.72)",
+                        "on-background": "#1a1c1b",
+                        "secondary-container": "#dfe0de",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#191c1b",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#2f1310",
+                        "secondary": "#5c5f5e",
+                        "tertiary": "#6c4642",
+                        "on-surface": "#1a1c1b",
+                        "primary-fixed": "#c7eadc",
+                        "inverse-on-surface": "#f1f1ef",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#faf9f7",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#abcec1",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#4f6f64",
+                        "primary": "#37574c",
+                        "error-container": "#ffdad6",
+                        "surface": "#FFFFFF",
+                        "on-primary-fixed-variant": "#2d4d43",
+                        "surface-container-highest": "#e3e2e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "target-min": "44px",
+                        "margin-clamp": "clamp(1rem, 4vw, 3rem)",
+                        "gutter": "1rem",
+                        "container-max": "1180px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "section-title": ["Plus Jakarta Sans"],
+                        "screen-title": ["Plus Jakarta Sans"],
+                        "metadata": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["clamp(2.25rem, 7vw, 4.75rem)", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "body": ["1rem", {"lineHeight": "1.55", "fontWeight": "400"}],
+                        "section-title": ["1.125rem", {"lineHeight": "1.15", "fontWeight": "600"}],
+                        "screen-title": ["clamp(1.5rem, 4vw, 2.25rem)", {"lineHeight": "1.15", "fontWeight": "600"}],
+                        "metadata": ["0.8125rem", {"lineHeight": "1.2", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-mirror-bg text-on-primary-fixed overflow-hidden mirror-cursor">
+<!-- Mirror Mode Main Canvas -->
+<main class="relative h-screen w-full flex flex-col md:flex-row p-margin-clamp overflow-hidden">
+<!-- Background Atmospheric Element -->
+<div class="absolute inset-0 pointer-events-none opacity-20">
+
+</div>
+<!-- Left Zone: Context & Identity -->
+<section class="relative z-10 w-full md:w-5/12 flex flex-col justify-end pb-12 pr-12">
+<div class="animate-settle">
+<!-- Metadata Row -->
+<div class="flex items-center gap-6 mb-8 text-on-surface-variant font-metadata text-metadata uppercase tracking-widest opacity-80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'opsz' 18;">calendar_today</span>
+<span>August 24</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'opsz' 18;">thermostat</span>
+<span>72°F / Sunny</span>
+</div>
+</div>
+<!-- Title -->
+<h1 class="font-headline-lg text-headline-lg text-on-primary-fixed mb-6 tracking-tight">
+                    Late Summer<br/>Dinner
+                </h1>
+<!-- Rationale & Occasion -->
+<div class="max-w-md border-l border-primary-fixed-dim/30 pl-8 mt-12">
+<p class="font-metadata text-metadata text-primary-fixed-dim uppercase tracking-widest mb-2">Occasion</p>
+<p class="font-body text-body text-surface-container-high mb-8">
+                        Social evening at an outdoor terrace.
+                    </p>
+<p class="font-metadata text-metadata text-primary-fixed-dim uppercase tracking-widest mb-2">Reflecta Rationale</p>
+<p class="font-body text-body text-on-surface-variant leading-relaxed opacity-90">
+                        A structured linen blend provides breathability for the lingering heat, while the muted sage palette transitions seamlessly into the evening's low-light ambiance.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Right Zone: Wardrobe Composition (Asymmetrical Gallery) -->
+<section class="relative z-10 w-full md:w-7/12 h-full overflow-y-auto pr-4 scroll-smooth">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 pb-32">
+<!-- Hero Garment -->
+<div class="md:col-span-2 flex justify-center mb-12 animate-settle delay-1">
+<div class="relative group w-full max-w-2xl aspect-[3/4] bg-neutral-900 overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105" data-alt="A high-end product photograph of a structured sage green linen blazer hanging on a minimalist walnut wood hanger. The lighting is dramatic and moody, casting soft shadows against a dark charcoal studio wall. The fabric texture is sharp and detailed, showing the natural weave of the premium linen. Part of a luxury wardrobe collection aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg9fGsK3_rgwh_3oPCTbJBbyuhoV2guIkmj1Pcpe-9nDotF56ESQm8KNbVijmZlPSmJwXv6_hwIndfegRN_Ud1w34dwxHux0sq6aexsmTnw14bPAl0mupOzisVTql7GtTnKwgdNQ-LbYqRfuDDL77E-haki9GxD-PC8vP4dXNWIHOewDP0aFwmttL5PhZWdc_BYqBcLYVwTYp1Qy9Hptopp3WcYT8-5FIssKoAA3XoIvXuHomdj10DGtZpax4VlCJWHI7tmt_Gow"/>
+<div class="absolute bottom-6 left-6 font-metadata text-metadata text-on-primary bg-black/40 backdrop-blur-md px-3 py-1">
+                            01 / Outer Layer
+                        </div>
+</div>
+</div>
+<!-- Secondary Garment 1 -->
+<div class="flex flex-col animate-settle delay-2">
+<div class="w-full aspect-[4/5] bg-neutral-900 mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up detail shot of a pair of tailored off-white trousers made from heavy silk and wool blend. The garment is draped elegantly, highlighting the sharp crease and the refined sheen of the fabric. The lighting is soft and diffused, emphasizing the pristine quality and minimalist luxury of the piece within a dark, sophisticated environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlDvkv8l3vUNfnVEuf30eYSLIJas2TNGXi47b3fNj5nYVISS9XVkNPNM5W9heQxohXOST6nreZnSAjoaTnnuwLLoMwDsdSPK3zNuIIg45i3v62wPI0GZArMJD9KIHubsVv5IBLOJ953hjLhFZYfm79FzqeXOWasbHVptm083zPc_YyJtx2Uqik_Ed-qrGJdKM-9bJV-dHJJiC6wKf6TXEcTSelmaP9rd2kDZ9bP4-CKifsi-UBrveIxXdzYHVeJdHwIZ8qANyUhg"/>
+</div>
+<p class="font-metadata text-metadata text-on-surface-variant uppercase tracking-wider">02 / Silk Tailored Trouser</p>
+</div>
+<!-- Secondary Garment 2 -->
+<div class="flex flex-col mt-24 animate-settle delay-3">
+<div class="w-full aspect-[4/5] bg-neutral-900 mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Exquisite macro photograph of a pair of black leather minimalist loafers on a dark reflective surface. The leather has a subtle matte finish with high-quality stitching visible. The lighting is focused and precise, highlighting the architectural silhouette of the footwear against a deep charcoal background, exuding quiet confidence and craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHDVGzJzj7g-Fim39URv531WYDuxfcim-IsFgxgePC5g9fTELbmq-c9WdGaIXkZtvKWqack5WqyCTH4i8djuw6T_n50XXvTOw_uqpJIZQAkykOUok5yrE9e8dmglEyAeBNFovQnWMQGfrDhkKdxnGj_z74wD9mYbuHb4q6ozJ3QjzZ_WAt2mYDCLojHHBk76jW3r1vGRkG-WOFweY1aUdaSJ6IlRbIYoMIg_5j2TUzFtjKVIZIL_aLwtKg3GsfoMFwlVgWAxl62A"/>
+</div>
+<p class="font-metadata text-metadata text-on-surface-variant uppercase tracking-wider">03 / Artisan Leather Loafer</p>
+</div>
+<!-- Detail Accent -->
+<div class="md:col-span-2 flex justify-end mt-12 animate-settle delay-3">
+<div class="w-1/2 aspect-square bg-neutral-900 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Close-up artistic shot of a vintage silver watch with a mesh strap resting on a dark, textured slate surface. The watch face is clean and minimalist with silver markers. Atmospheric lighting creates a sense of timeless elegance, with soft bokeh in the background. The color palette is strictly monochromatic silvers and blacks, maintaining the gallery-like professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDoMdUiVE-bZIXP8glfP0GdDtEKtKdOOXi6vC2zgWFAz9CaiV4_sOq4cKmDBo_NKUw-1FqdvJ6WsJqeyrYHsBjvgFKfnZtrBVjzTJyb9NZjwypo71zuU0cSA2Fk1WxL_g3SmyOLUiAvWGjcpF5OvHYjTYXYbJCVhOWIpWFFKCb2fpnW-OMYWs55IpFgs3JvezndYyy9mlS7pjogW4KgvlxHBuAzFbeIgdHaz1jCkgm2ui0CHTHIKV20OpHVZdjV0f7-eLiSEkFHA"/>
+<div class="absolute top-4 right-4 text-on-primary opacity-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 200;">info</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mirror Mode "Wake" Indicator (Quiet Bottom Bar) -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-30 group hover:opacity-100 transition-opacity duration-500">
+<div class="w-px h-12 bg-on-primary-fixed-variant mb-4"></div>
+<p class="font-metadata text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Mirror Mode Active</p>
+</div>
+</main>
+<!-- Micro-interaction for Mirror Mode -->
+<script>
+        // Subtle Parallax / Interaction on mouse move (even if cursor hidden)
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            const shader = document.querySelector('webgl-shader');
+            if(shader) {
+                shader.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+            }
+        });
+
+        // Auto-scroll logic for "Mirror Experience" (Optional, very slow)
+        let scrollPos = 0;
+        const scrollContainer = document.querySelector('section:nth-child(3)');
+        
+        function slowScroll() {
+            if(scrollContainer) {
+                scrollPos += 0.2;
+                if (scrollPos > scrollContainer.scrollHeight - scrollContainer.clientHeight) {
+                    // Stay at bottom or loop back subtly
+                } else {
+                    scrollContainer.scrollTop = scrollPos;
+                }
+            }
+            requestAnimationFrame(slowScroll);
+        }
+        
+        // requestAnimationFrame(slowScroll); // Uncomment for auto-panning experience
+    </script>
+</body></html>

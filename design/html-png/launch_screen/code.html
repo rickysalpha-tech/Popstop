@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reflecta | Precision Wardrobe</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#875e59",
+                        "on-secondary-container": "#616362",
+                        "surface-container-high": "#e8e8e6",
+                        "secondary-fixed": "#e2e3e1",
+                        "text-primary": "#1D1D1F",
+                        "text-secondary": "#52525B",
+                        "mirror-bg": "#141619",
+                        "primary-fixed-dim": "#abcec1",
+                        "on-tertiary-fixed-variant": "#623d39",
+                        "tertiary-fixed": "#ffdad5",
+                        "surface-container": "#eeeeec",
+                        "on-surface-variant": "#414845",
+                        "inverse-surface": "#2f3130",
+                        "surface-tint": "#45655a",
+                        "outline": "#717975",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f4f4f1",
+                        "background": "#faf9f7",
+                        "secondary-fixed-dim": "#c5c7c5",
+                        "on-tertiary-container": "#ffe2de",
+                        "on-primary-fixed": "#002018",
+                        "tertiary-fixed-dim": "#eebab4",
+                        "surface-dim": "#dadad8",
+                        "on-primary": "#ffffff",
+                        "focus-ring": "rgba(79, 111, 100, 0.22)",
+                        "border": "#D9DDD7",
+                        "on-secondary-fixed-variant": "#454746",
+                        "surface-variant": "#e3e2e0",
+                        "on-primary-container": "#cdf1e3",
+                        "outline-variant": "#c1c8c4",
+                        "glass-overlay": "rgba(255, 255, 255, 0.72)",
+                        "on-background": "#1a1c1b",
+                        "secondary-container": "#dfe0de",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#191c1b",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#2f1310",
+                        "secondary": "#5c5f5e",
+                        "tertiary": "#6c4642",
+                        "on-surface": "#1a1c1b",
+                        "primary-fixed": "#c7eadc",
+                        "inverse-on-surface": "#f1f1ef",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#faf9f7",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#abcec1",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#4f6f64",
+                        "primary": "#37574c",
+                        "error-container": "#ffdad6",
+                        "surface": "#FFFFFF",
+                        "on-primary-fixed-variant": "#2d4d43",
+                        "surface-container-highest": "#e3e2e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "target-min": "44px",
+                        "margin-clamp": "clamp(1rem, 4vw, 3rem)",
+                        "gutter": "1rem",
+                        "container-max": "1180px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "section-title": ["Plus Jakarta Sans"],
+                        "screen-title": ["Plus Jakarta Sans"],
+                        "metadata": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["clamp(2.25rem, 7vw, 4.75rem)", { "lineHeight": "1.0", "fontWeight": "600" }],
+                        "body": ["1rem", { "lineHeight": "1.55", "fontWeight": "400" }],
+                        "section-title": ["1.125rem", { "lineHeight": "1.15", "fontWeight": "600" }],
+                        "screen-title": ["clamp(1.5rem, 4vw, 2.25rem)", { "lineHeight": "1.15", "fontWeight": "600" }],
+                        "metadata": ["0.8125rem", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .mirror-mist {
+            background-color: #faf9f7;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(226, 227, 225, 0.4) 0, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(171, 206, 193, 0.1) 0, transparent 50%);
+        }
+        .glass-veil {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+        }
+        .reveal-up {
+            animation: revealUp 1s cubic-bezier(0.2, 0, 0, 1) forwards;
+        }
+        @keyframes revealUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-text-primary antialiased overflow-x-hidden">
+<!-- Header / TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm">
+<nav class="flex justify-between items-center px-margin-clamp py-6 w-full max-w-container-max mx-auto">
+<div class="font-headline-lg text-[1.5rem] font-extrabold text-primary tracking-tight">
+                Reflecta
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-metadata text-metadata text-text-secondary hover:text-primary transition-colors" href="#">COLLECTIONS</a>
+<a class="font-metadata text-metadata text-text-secondary hover:text-primary transition-colors" href="#">THE MIRROR</a>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<button class="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">cloud</span>
+<span class="font-metadata text-metadata">SYNC</span>
+</button>
+</div>
+</nav>
+</header>
+<!-- Main Content -->
+<main class="min-h-screen pt-32 lg:pt-0">
+<div class="w-full max-w-container-max mx-auto px-margin-clamp lg:flex lg:items-center lg:min-h-screen">
+<!-- Left Side: Copy and CTA -->
+<div class="lg:w-1/2 pr-0 lg:pr-16 mb-16 lg:mb-0">
+<div class="reveal-up" style="animation-delay: 0.1s;">
+<div class="inline-block py-1 px-3 bg-surface-container-low border border-border mb-8">
+<span class="font-metadata text-metadata text-primary uppercase tracking-widest">Version 2.0 Precision</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary mb-8 leading-[0.95]">
+                        Dress for the day with the wardrobe <span class="text-primary italic">you already own.</span>
+</h1>
+<p class="font-body text-body text-text-secondary max-w-md mb-12 lg:text-lg">
+                        A private dressing room for your digital self. Curate occasion-ready looks with expert precision, eliminating the friction of the morning ritual.
+                    </p>
+<div class="flex flex-col sm:flex-row items-start gap-4">
+<button class="h-target-min px-8 bg-primary text-on-primary font-section-title hover:bg-primary-container transition-all duration-300 shadow-sm flex items-center justify-center group">
+<span>Add First Item</span>
+<span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-1" style="font-variation-settings: 'wght' 300;">arrow_forward</span>
+</button>
+<button class="h-target-min px-8 border border-border text-text-secondary font-section-title hover:bg-surface-container-low transition-all duration-300 flex items-center justify-center">
+<span>View Gallery</span>
+</button>
+</div>
+<div class="mt-20 grid grid-cols-2 gap-8 border-t border-border pt-8">
+<div>
+<span class="font-metadata text-metadata text-text-secondary block mb-2">INTELLIGENT RECALL</span>
+<p class="font-body text-[0.9rem] text-text-primary">Never lose track of a garment again. Digital cataloging with metadata tagging.</p>
+</div>
+<div>
+<span class="font-metadata text-metadata text-text-secondary block mb-2">OCCASION CURATION</span>
+<p class="font-body text-[0.9rem] text-text-primary">Pre-compose looks for travel, business, or the quiet everyday.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Asymmetric Visual Composition -->
+<div class="lg:w-1/2 relative h-[600px] lg:h-[819px] reveal-up" style="animation-delay: 0.3s;">
+<div class="absolute inset-0 mirror-mist -z-10 rounded-[2rem] opacity-50"></div>
+<div class="asymmetric-grid h-full p-4 lg:p-8">
+<!-- Main Hero Garment -->
+<div class="col-start-1 col-end-9 row-start-1 row-end-10 relative overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A high-end studio photograph of a minimalist linen blazer in charcoal grey, hanging on a thin wooden hanger against a clean, off-white gallery wall. The lighting is soft and directional, highlighting the natural texture of the fabric. The aesthetic is calm, professional, and reflects a light-mode modern wardrobe app. Deep shadows provide a sense of depth and quiet luxury." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqKczYJBtU2UVBPPvnOENfFQ86at7wieXzhcVrn9CYDJvtL2Tw-asxGZIWd_DG4gift-5J1h-LNcOHUR1g5q0zp3FtGxarUZYyYDsTbWxxe_O653DLX_DRv0nO3d2hvm3ZR2PRKaoKVxBZ9Hopva_PeYVxmGY6JdncySElnERXUotkIxKdivR1sQR_IXSa3iCppn9o1UGN-N-QpY9w8LCeTxHEhlXniRiUE-u3jTks5MaFEEgZb1NORbBkzZr6xbfr-E-DzUaxjQ')">
+</div>
+<div class="absolute bottom-6 left-6 glass-veil px-4 py-2">
+<span class="font-metadata text-metadata text-text-primary">01 / EXTERIOR LAYER</span>
+</div>
+</div>
+<!-- Floating Secondary Item -->
+<div class="col-start-8 col-end-13 row-start-3 row-end-8 relative overflow-hidden shadow-2xl border-4 border-white transform translate-y-8 lg:translate-y-16">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close-up detail of a premium silk necktie with a subtle geometric pattern in deep forest green. The tie is laid elegantly across a white surface with crisp, intentional folds. The lighting is bright and airy, typical of a modern minimalist design system. The image conveys precision, expert craftsmanship, and the quiet confidence of a well-curated wardrobe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmdXG5J52SnfTjTvdW2lQl5IOU_1ISuzrg4aJS3eRb8vqEjsfqvEhW-POKG5wms7MaTeHE9GF1b0fomadj786A5iKJfjC7dao05llsg3XzhDlvXN6QMxEIh0JuRWCqEI2_tENv_1Du-wN6uSCRrQ2SPCY7OJX1Xj7s4fQAiX3t7E20de19sdwR0dOKeO-LTZnLUAX3T23NAGI7WeCMoaKC4qw3nxnASgHKXSIbEJEr4PYrDuJoQSJLXrP-m84lXmmfsS_859n9Pw')">
+</div>
+</div>
+<!-- Mirror Preview Element -->
+<div class="col-start-2 col-end-6 row-start-9 row-end-13 glass-veil flex flex-col p-6 space-y-4 shadow-lg backdrop-blur-xl">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'wght' 300;">visibility</span>
+<span class="font-metadata text-[10px] tracking-widest text-text-secondary">MIRROR_LIVE</span>
+</div>
+<div class="space-y-2">
+<div class="h-[1px] w-full bg-primary/20"></div>
+<div class="h-[1px] w-2/3 bg-primary/20"></div>
+<div class="h-[1px] w-full bg-primary/20"></div>
+</div>
+<p class="font-metadata text-[11px] leading-relaxed text-text-primary">
+                            ANALYST: LOOK 04<br/>
+                            TONALITY: COLD<br/>
+                            STRUCTURE: RELAXED
+                        </p>
+</div>
+<!-- Metadata Tag -->
+<div class="absolute top-12 right-0 bg-text-primary text-white p-4 -rotate-90 origin-right">
+<span class="font-metadata text-[10px] tracking-tighter uppercase">Wardrobe Identification Ref. 993-21</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Area / Sub-sections -->
+<footer class="w-full bg-surface-container-low py-20 mt-20 border-t border-border">
+<div class="max-w-container-max mx-auto px-margin-clamp flex flex-col md:flex-row justify-between items-start">
+<div class="mb-12 md:mb-0">
+<div class="font-headline-lg text-[1.25rem] font-extrabold text-primary mb-4 tracking-tight">Reflecta</div>
+<p class="font-metadata text-metadata text-text-secondary max-w-xs">Precision utility for the modern wardrobe. Built for those who value the edit over the collection.</p>
+</div>
+<div class="grid grid-cols-2 gap-12 sm:gap-24">
+<div>
+<h4 class="font-metadata text-metadata text-text-primary mb-6 uppercase">System</h4>
+<ul class="space-y-4 font-body text-[0.9rem] text-text-secondary">
+<li><a class="hover:text-primary transition-colors" href="#">Catalog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Mirror Mode</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Occasions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-metadata text-metadata text-text-primary mb-6 uppercase">Connect</h4>
+<ul class="space-y-4 font-body text-[0.9rem] text-text-secondary">
+<li><a class="hover:text-primary transition-colors" href="#">Cloud Sync</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Support</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-clamp mt-20 flex justify-between items-center opacity-40">
+<span class="font-metadata text-[10px]">© 2024 REFLECTA UTILITIES</span>
+<span class="font-metadata text-[10px]">DESIGNED IN THE SILENCE</span>
+</div>
+</footer>
+<!-- Interactive Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Subtle parallax effect on hero images
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('.lg\\:w-1\\/2 .bg-cover');
+                if (heroImage) {
+                    heroImage.style.transform = `translateY(${scrolled * 0.05}px) scale(${1 + scrolled * 0.0001})`;
+                }
+            });
+
+            // Smooth appear for CTAs
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.boxShadow = '0 10px 25px -5px rgba(29, 29, 31, 0.1)';
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body></html>

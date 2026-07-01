@@ -179,3 +179,19 @@ A strong completed task usually includes:
 - Synthetic mock incidents, archive records, scan results, evidence logs, and takedown examples.
 - Clear marketing and security workflows.
 - Verification notes describing what was run or checked.
+
+## GitHub Push Security Audit
+
+Before pushing new code to GitHub, or whenever the user asks Codex to push code, Codex must spawn a subagent to perform a security and privacy audit over the exact code that would be pushed.
+
+The audit must check for:
+
+- API keys, access tokens, private keys, session secrets, OAuth credentials, and webhook secrets.
+- `.env` files, local config files, auth files, logs, shell history, database dumps, or generated files that may contain secrets.
+- Personal information, customer data, private brand data, proprietary client material, or internal-only URLs.
+- Screenshots, media, fixtures, or synthetic data that accidentally include real names, real brands, credentials, or private business information.
+- Newly added dependencies or scripts that expose secrets through command arguments, config files, console output, or committed artifacts.
+
+The subagent should inspect `git status --short`, staged and unstaged diffs, newly added files, and any generated assets relevant to the push. If a subagent tool is not available, Codex must run the same audit manually and clearly state that a subagent could not be used.
+
+Do not push until the audit findings are resolved, or until the user explicitly approves pushing with a known residual risk. The final response for any push should include a short security-audit result.

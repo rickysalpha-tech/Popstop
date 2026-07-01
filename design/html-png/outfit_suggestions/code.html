@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reflecta - Outfit Suggestions</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#875e59",
+                    "on-secondary-container": "#616362",
+                    "surface-container-high": "#e8e8e6",
+                    "secondary-fixed": "#e2e3e1",
+                    "text-primary": "#1D1D1F",
+                    "text-secondary": "#52525B",
+                    "mirror-bg": "#141619",
+                    "primary-fixed-dim": "#abcec1",
+                    "on-tertiary-fixed-variant": "#623d39",
+                    "tertiary-fixed": "#ffdad5",
+                    "surface-container": "#eeeeec",
+                    "on-surface-variant": "#414845",
+                    "inverse-surface": "#2f3130",
+                    "surface-tint": "#45655a",
+                    "outline": "#717975",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f4f4f1",
+                    "background": "#faf9f7",
+                    "secondary-fixed-dim": "#c5c7c5",
+                    "on-tertiary-container": "#ffe2de",
+                    "on-primary-fixed": "#002018",
+                    "tertiary-fixed-dim": "#eebab4",
+                    "surface-dim": "#dadad8",
+                    "on-primary": "#ffffff",
+                    "focus-ring": "rgba(79, 111, 100, 0.22)",
+                    "border": "#D9DDD7",
+                    "on-secondary-fixed-variant": "#454746",
+                    "surface-variant": "#e3e2e0",
+                    "on-primary-container": "#cdf1e3",
+                    "outline-variant": "#c1c8c4",
+                    "glass-overlay": "rgba(255, 255, 255, 0.72)",
+                    "on-background": "#1a1c1b",
+                    "secondary-container": "#dfe0de",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#191c1b",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#2f1310",
+                    "secondary": "#5c5f5e",
+                    "tertiary": "#6c4642",
+                    "on-surface": "#1a1c1b",
+                    "primary-fixed": "#c7eadc",
+                    "inverse-on-surface": "#f1f1ef",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf9f7",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#abcec1",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#4f6f64",
+                    "primary": "#37574c",
+                    "error-container": "#ffdad6",
+                    "surface": "#FFFFFF",
+                    "on-primary-fixed-variant": "#2d4d43",
+                    "surface-container-highest": "#e3e2e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "target-min": "44px",
+                    "margin-clamp": "clamp(1rem, 4vw, 3rem)",
+                    "gutter": "1rem",
+                    "container-max": "1180px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "section-title": ["Plus Jakarta Sans"],
+                    "screen-title": ["Plus Jakarta Sans"],
+                    "metadata": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-lg": ["clamp(2.25rem, 7vw, 4.75rem)", {"lineHeight": "1.0", "fontWeight": "800"}],
+                    "body": ["1rem", {"lineHeight": "1.55", "fontWeight": "400"}],
+                    "section-title": ["1.125rem", {"lineHeight": "1.15", "fontWeight": "600"}],
+                    "screen-title": ["clamp(1.5rem, 4vw, 2.25rem)", {"lineHeight": "1.15", "fontWeight": "600"}],
+                    "metadata": ["0.8125rem", {"lineHeight": "1.2", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #faf9f7;
+            color: #1D1D1F;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #D9DDD7; border-radius: 10px; }
+        
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+        
+        .lead-card { grid-column: span 12; }
+        @media (min-width: 1024px) {
+            .lead-card { grid-column: span 7; }
+            .side-grid { grid-column: span 5; }
+        }
+
+        .staggered-item:nth-child(even) { margin-top: 2rem; }
+    </style>
+</head>
+<body class="font-body text-body selection:bg-primary-fixed-dim overflow-x-hidden">
+<!-- Desktop SideNavBar -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-mirror-bg flex-col h-full p-6 border-r border-border dark:border-outline-variant z-40">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed mb-8 tracking-tight">Reflecta</div>
+<nav class="flex-1 space-y-2">
+<!-- Wardrobe -->
+<a class="flex items-center gap-3 px-4 py-3 text-text-secondary dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-inverse-surface/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">checkroom</span>
+<span class="font-body text-body">Wardrobe</span>
+</a>
+<!-- Add Item -->
+<a class="flex items-center gap-3 px-4 py-3 text-text-secondary dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-inverse-surface/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">add_box</span>
+<span class="font-body text-body">Add Item</span>
+</a>
+<!-- Outfits (ACTIVE) -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed font-semibold hover:bg-surface-variant/50 dark:hover:bg-inverse-surface/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+<span class="font-body text-body">Outfits</span>
+</a>
+<!-- Favorites -->
+<a class="flex items-center gap-3 px-4 py-3 text-text-secondary dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-inverse-surface/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-body text-body">Favorites</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-4 py-3 text-text-secondary dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-inverse-surface/50 rounded-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body text-body">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-border/50">
+<button class="w-full flex items-center gap-3 px-4 py-3 text-text-secondary dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-inverse-surface/50 rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined">visibility</span>
+<span class="font-body text-body">Mirror Mode</span>
+</button>
+<div class="mt-6 flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A clean, professional headshot of a user with a neutral expression, high-end studio lighting, soft shadows, reflecting a premium minimalist lifestyle aesthetic. The background is a soft beige matching the Reflecta brand palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHEa1dO41UD1sIx8o3crCKIN4XqyZ7jY9n9Ml_KZAHLNs96_l5_YO3IORF06GhNM7CbRb2A72eeqGz1XV9bNz5CyBIho9rVbDlmp4UdgoL9FbMG9UCkmT-zyVRNEpwQvO2h_fDYGSgrSW57M25dsFS1SvzHIQ-CYSYlxQqhRuvgxBan8ZLriWIPAlJ6lU1zBRz2NcCLiopADexXsFR4La0J9lyCYHduJqncVHGuwebrm5l_9y6zqXQ1MfQYcsKy2J00UcziKg6LA"/>
+</div>
+<div class="flex flex-col">
+<span class="text-metadata font-metadata text-text-primary">Reflecta User</span>
+<span class="text-[10px] uppercase tracking-widest text-text-secondary">Premium Access</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Work Surface -->
+<main class="md:ml-64 min-h-screen pb-24 md:pb-12">
+<!-- Top App Bar Content -->
+<header class="flex justify-between items-center px-margin-clamp py-8 w-full max-w-container-max mx-auto bg-background dark:bg-mirror-bg">
+<div>
+<h1 class="font-screen-title text-screen-title text-text-primary mb-1">Outfit Suggestions</h1>
+<p class="font-metadata text-metadata text-text-secondary">Curated for your aesthetic and environment</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-text-secondary hover:text-primary transition-colors">cloud</button>
+<button class="material-symbols-outlined text-text-secondary hover:text-primary transition-colors">notifications</button>
+</div>
+</header>
+<!-- Controls Zone -->
+<section class="px-margin-clamp max-w-container-max mx-auto mb-10 space-y-6">
+<!-- Occasion Selector -->
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2 text-metadata font-metadata border border-primary bg-primary/5 text-primary rounded-lg transition-all">Work</button>
+<button class="px-5 py-2 text-metadata font-metadata border border-border text-text-secondary hover:border-primary/50 rounded-lg transition-all">Dinner</button>
+<button class="px-5 py-2 text-metadata font-metadata border border-border text-text-secondary hover:border-primary/50 rounded-lg transition-all">Weekend</button>
+<button class="px-5 py-2 text-metadata font-metadata border border-border text-text-secondary hover:border-primary/50 rounded-lg transition-all">Formal</button>
+<button class="px-5 py-2 text-metadata font-metadata border border-border text-text-secondary hover:border-primary/50 rounded-lg transition-all">Travel</button>
+</div>
+<!-- Weather Context Chip -->
+<div class="flex items-center gap-4 py-3 px-5 bg-surface-container-low rounded-xl w-fit border border-border/40">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'wght' 300;">cloud_queue</span>
+<div class="flex flex-col">
+<span class="font-metadata text-metadata text-text-primary leading-tight">London, 18°C</span>
+<span class="text-[10px] font-metadata text-text-secondary">Partly Cloudy • High Humidity</span>
+</div>
+</div>
+</section>
+<!-- Main Content Area: Asymmetric Layout -->
+<section class="px-margin-clamp max-w-container-max mx-auto">
+<div class="asymmetric-grid">
+<!-- Lead Recommendation Card -->
+<div class="lead-card group">
+<div class="relative bg-white p-6 rounded-2xl shadow-[0_18px_44px_rgba(29,29,31,0.08)] border border-border/30 transition-transform duration-500 hover:scale-[1.01]">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Hero Image (Asymmetric composition) -->
+<div class="w-full md:w-3/5 aspect-[4/5] relative overflow-hidden rounded-xl bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A professionally styled flat-lay outfit for a modern minimalist office look. Features a charcoal grey wool blazer, a crisp white organic cotton t-shirt, and tailored black trousers. The lighting is soft and directional, creating a premium editorial feel with neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUuVRzRK7y-6UgKVeEAuDEKljkyCl7sFFvZHrHzBihXEV3mlZhm0l50kYdsHJuMOA8pKL48NKUOjBc-MGeOsTO5O_vPI1qhfGwq_CjNJ8epK40_5utcSTqd10aOJS0nw3GfQvWuq0kYrunkJBdxTxkWHicd2rx2CQhBOBLLlmLUPQuArRQyFdBdq2-aDyI_IsLcPb8JpsfFsZ1HBdKatH4IqoTm0iT3rxdMvOie99UohnH2kgqh7XJyQDbcnqFYyFuEoVrTD642g"/>
+<div class="absolute bottom-4 left-4 right-4 flex gap-2">
+<div class="h-12 w-12 rounded-lg border border-white/20 bg-glass-overlay backdrop-blur-md overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up detail of a high-quality charcoal wool blazer fabric, showing fine texture and clean stitching, professional studio lighting, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA4ZsVJOg53KgMBK-BH7xSttowBhI6CadJ7R85wP66862ClOE4q53m28HBp-HQd_oUgrZGReYVQcsE3tDQytx2ra3BwD4OO9APQd4njvCLFLmxTSDqKtiiX3RgM_waQnzifIeYxn8CZsOo9QWXnPSN6f8Sh8Ya2H_YmvsBJY9FftDlXzRsA0pueUxtijNf7iPozfXagkBJDDsYe06W1bSacpI-heYf6Vr3hIP-yTP-TelY5CHiEgzChmO2RZ55BMrgPc5mqf1qGw"/>
+</div>
+<div class="h-12 w-12 rounded-lg border border-white/20 bg-glass-overlay backdrop-blur-md overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Minimalist luxury leather loafers in matte black, placed on a clean white surface with soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCuj_7XU5SwZ1kuUWn1vTANeYUKKalmQIrK6fvVP6kVA03xST2ez9dO10lpBfhNEvo8VEDJ25Hhf3DvDf3oLCpPt7RmBGFKSD1XRGSYUARc4iV0zQ5GXW40vzdQqdMeTeIyZsNsSKAv3XlO8iTmGpqNe3eCyc5e_HW2ZlwP7c6G_79DN9NdWcE-HkSBltMz4HJPXrOhoz_xwP1Bb0Fkz0IUOT7QiS6RRP7nyW4UBVXJ_uJT0_1rXCcpe-bkUQh21wobnASt-dg_A"/>
+</div>
+</div>
+</div>
+<!-- Content Side -->
+<div class="w-full md:w-2/5 flex flex-col justify-between py-2">
+<div>
+<span class="font-metadata text-metadata text-primary mb-2 block tracking-widest uppercase">Primary Look</span>
+<h2 class="font-screen-title text-screen-title text-text-primary mb-4 leading-tight">Structured Graphite Layering</h2>
+<div class="space-y-4 mb-8">
+<div class="flex flex-col gap-1">
+<span class="font-metadata text-[10px] text-text-secondary uppercase">Rationale</span>
+<p class="font-metadata text-metadata text-text-primary italic leading-relaxed">
+                                                "The wool-blend charcoal blazer provides necessary insulation for London's 18°C breeze while maintaining a professional silhouette for your 10:00 AM meeting."
+                                            </p>
+</div>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 font-metadata text-metadata text-text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                                                Essential Charcoal Blazer
+                                            </li>
+<li class="flex items-center gap-2 font-metadata text-metadata text-text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                                                Supima White Tee
+                                            </li>
+<li class="flex items-center gap-2 font-metadata text-metadata text-text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                                                Slim-fit Chinos
+                                            </li>
+</ul>
+</div>
+</div>
+<button class="h-[44px] w-full bg-primary text-white font-body font-semibold rounded-lg shadow-sm hover:bg-primary-container transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+                                    Show on Mirror
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Alternative Looks Side Grid -->
+<div class="side-grid grid grid-cols-1 md:grid-cols-2 gap-8 content-start">
+<!-- Alternative 1 -->
+<div class="staggered-item space-y-4">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-variant border border-border/30 group relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A smart casual outfit featuring a navy blue lightweight knit sweater over a light blue Oxford shirt, paired with beige chinos. Clean architectural background, daylight, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4F0JieVH5iHa3rtoa6g7xsiWmQbZgFi2Ilpd0O6mHAAnzKSsMZszaU83B6r4QD3_HLgo9GZEjJMouqD1OYMgm78oiHhepMMZtdW9QPYfiL-XHa-ALuimL8UaLZTUCpPbOy1nWiALQrx2rx49-fSXOcKE6m3vCFVd1HmIiX6UXPH6YBHuiAR6SSI-raDA7BjlL0n4Sf5mQrg4YCEFTktoLrCyxNvcOzUCdsr-NoF2SxppLRN1KiqzWRO2dcisRdukHLIWzd3iAFQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<button class="w-full py-2 bg-white/90 backdrop-blur text-metadata font-metadata rounded-md text-text-primary">Preview</button>
+</div>
+</div>
+<div>
+<h3 class="font-section-title text-section-title text-text-primary">Breezy Navy Knit</h3>
+<p class="font-metadata text-metadata text-text-secondary mt-1">Light layers for fluctuating temps.</p>
+</div>
+</div>
+<!-- Alternative 2 -->
+<div class="staggered-item space-y-4">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-variant border border-border/30 group relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist monochrome outfit with a black trench coat, black turtleneck, and grey wool trousers. Moody overcast lighting, city background, sleek and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVeGhkLK7q6mhbsWWz3He0Ut5Hg2gayR3Vlli81SnniBUxEg-31jpe37snEDtgqW8GtgZTjzd4pt3Xw3brnUlwaNh02_Bav0uGR-J7FkcVIHNPpfZzeVbbZuAtdPxh6wKd7FEor_CGmasen1-wtqVJYiJOUvpPXnRektS9kCj60MwMsOzMvRrCU0XWXSTxDvzHfhwXAD7tUKy2OoonaqnDqgB4W5VsaafEbz8l3oDd-BiS1NTeZU4FoMhBtTQKRhM_9JwF8IzBCA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<button class="w-full py-2 bg-white/90 backdrop-blur text-metadata font-metadata rounded-md text-text-primary">Preview</button>
+</div>
+</div>
+<div>
+<h3 class="font-section-title text-section-title text-text-primary">Monochrome Transit</h3>
+<p class="font-metadata text-metadata text-text-secondary mt-1">Sleek coverage for overcast skies.</p>
+</div>
+</div>
+<!-- Alternative 3 -->
+<div class="staggered-item md:col-span-2 space-y-4">
+<div class="flex gap-6 items-center bg-surface-container-low p-4 rounded-xl border border-border/40 group hover:border-primary/30 transition-colors">
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Flat lay of a casual denim jacket over a grey hoodie, lifestyle composition on a light wood floor, soft warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJI-xHMpqP6huQZg_T60k8V1xCG67S9rDnxO6TdJ2Bcbk8iJ2WXjgIOIbKg-_tnVhbq5XPc7BbsxT7qKsBxVutjGvlkQvmQcnDHEacH-eNQDhYarrmB_dw7rNObeQL2vdj_ilUdRGcIROR58MYuKJ3CLgc0pSIoHwqyFD6etOv4oorMTrAezzOwcghVqPkeYe3celJNiHZZIuP1_XweTZqTxKHgiU3RHDyhVmgxzUGeakfocT6M23QGMSLrFvbrUhWzV5xFxJdqg"/>
+</div>
+<div class="flex-1">
+<span class="text-[10px] font-metadata text-text-secondary uppercase tracking-widest">Relaxed Option</span>
+<h3 class="font-section-title text-section-title text-text-primary">Denim Over Hood</h3>
+<p class="font-metadata text-metadata text-text-secondary italic">Ideal for post-work casual drinks.</p>
+</div>
+<button class="material-symbols-outlined text-text-secondary hover:text-primary p-2">chevron_right</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden backdrop-blur-md bg-glass-overlay dark:bg-mirror-bg/80 shadow-sm">
+<a class="flex flex-col items-center justify-center text-text-secondary dark:text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">checkroom</span>
+<span class="font-metadata text-[10px] mt-1">Wardrobe</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-secondary dark:text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-metadata text-[10px] mt-1">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+<span class="font-metadata text-[10px] mt-1">Outfits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-secondary dark:text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-metadata text-[10px] mt-1">Favs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-secondary dark:text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-metadata text-[10px] mt-1">Settings</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for chips
+        document.querySelectorAll('button.font-metadata').forEach(button => {
+            button.addEventListener('click', () => {
+                // If it's a filter chip
+                if(button.parentElement.classList.contains('flex-wrap')) {
+                    document.querySelectorAll('.flex-wrap button').forEach(b => {
+                        b.classList.remove('bg-primary/5', 'text-primary', 'border-primary');
+                        b.classList.add('border-border', 'text-text-secondary');
+                    });
+                    button.classList.remove('border-border', 'text-text-secondary');
+                    button.classList.add('bg-primary/5', 'text-primary', 'border-primary');
+                }
+            });
+        });
+
+        // Mirror mode activation simulation
+        document.querySelector('button.bg-primary').addEventListener('click', function() {
+            const originalText = this.innerHTML;
+            this.innerHTML = '<span class="material-symbols-outlined animate-pulse">sync</span> Connecting to Mirror...';
+            this.classList.add('opacity-80');
+            
+            setTimeout(() => {
+                this.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Active on Mirror';
+                this.classList.replace('bg-primary', 'bg-primary-container');
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.classList.replace('bg-primary-container', 'bg-primary');
+                    this.classList.remove('opacity-80');
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+</body></html>
